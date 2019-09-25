@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Unity WebGL Player | %UNITY_WEB_NAME%</title>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="%UNITY_WEBGL_LOADER_URL%"></script>
+	<script>
+		var startUpTime = Math.floor(Date.now() / 1000);
+		var params = (new URL(document.location)).searchParams;
+		var exerciseId = params.get("id");
+		var mode = params.get("mode");
+		
+		function load(path, callback)
+		{
+			axios.get("Configs/" + path).then(function(resp) {
+				callback(resp.data);
+			});
+		}
+
+        function sendMessage(name, data)
+        {
+            gameInstance.SendMessage("Main", name, JSON.stringify(data));
+        }
+
+		window.appReady = function() {
+			load("AppConfig.json", function (data) {
+			    if(!exerciseId) {
+				    exerciseId = data.defaultExercise;
+				}
+
+                if(!mode) {
+                    mode = data.defaultMode;
+                }
+			    
+				data.startedAt = startUpTime;
+				sendMessage("InitializeApp", data);
+			});
+		};
+
+		window.engineReady = function() {
+			load(exerciseId + "/Settings.json", function (data) {
+				sendMessage("InitializeExercise", data);
+			});
+		};
+
+		window.exerciseReady = function() {
+			load(exerciseId + "/Options_" + mode + ".json", function (data) {
+				sendMessage("StartExercise", data);
+			});
+		};
+
+		window.completeExercise = function(result) {
+			engineReady();
+		};
+
+        window.onError = function(error) {
+            console.error(error);
+        };
+
+        window.onAlert = function(message) {
+            alert(message);
+            sendMessage("OnHandleDialogue", { result: true })
+        };
+
+		var gameInstance = UnityLoader.instantiate("gameContainer", "%UNITY_WEBGL_BUILD_URL%", {
+			Module: {
+				CachedXMLHttpRequestSilent: true,
+				CachedXMLHttpRequestLoader: true
+			}
+		});
+		
+		function onLoad() {
+			document.getElementById("gameContainer").focus();
+		}
+		
+	</script>
+</head>
+
+<body onLoad="onLoad()">
+<div id="gameContainer" style="width: %UNITY_WIDTH%px; height: %UNITY_HEIGHT%px; margin: auto"></div>
+</body>
+
+</html>

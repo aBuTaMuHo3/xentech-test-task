@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 1495516384
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 71f2342db0f2a88fffc5f12dc1dc5dd0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d0b2f0e67a49883fd83625973d09fe14
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+Assets:
+- Assets/Modules/Fonts/Rubik-Regular SDF.asset
+Dependencies:
+- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/general

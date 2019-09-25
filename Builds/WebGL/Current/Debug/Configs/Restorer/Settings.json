@@ -1,0 +1,34 @@
+{
+	"id": "Restorer",
+	"localization": {
+		"questionSymbol": "?"
+	},
+	"configs": {
+		"config":"Configs/Restorer/Config.json"
+	},
+	"bundles": [
+		{
+			"id": "Restorer",
+			"path": "Bundles/restorer",
+			"cache": false
+		},
+		{
+			"id": "HUD",
+			"path": "Bundles/hud",
+			"cache": false
+		}
+	],
+	"contexts": [
+		{
+			"id": "Restorer",
+			"contexts": [
+				{
+					"id": "HUD"
+				},
+				{
+					"id": "Dialogue"
+				}
+			]
+		}
+	]
+}

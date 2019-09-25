@@ -1,0 +1,744 @@
+{
+	"exercise": {
+		"id": "Restorer",
+		"settingsClassName": "Restorer.Model.RestorerConfiguration,Restorer",
+		"exerciseConfig": {
+			"modelClassName": "Restorer.Model.RestorerModel,Restorer",
+			"controllerClassName": "Restorer.Controller.RestorerController,Restorer",
+			"viewClassName": "Restorer.View.RestorerView,Restorer",
+			"assetClassName": "Restorer.Assets.RestorerAssets,Restorer",
+			"terminatorClassNames": [
+				"ExerciseEngine.Terminator.TimeBasedTerminator,ExerciseEngine",
+				"ExerciseEngine.Terminator.SurvivorTerminator,ExerciseEngine"
+			],
+			"tutorial": {},
+			"colors": [
+				"Red",
+				"Orange",
+				"Purple",
+				"Blue",
+				"Green"
+			],
+			"maxItems": 20,
+			"fieldPattern": {
+				"0": [
+					[
+						0,
+						0,
+						1,
+						0,
+						0
+					],
+					[
+						0,
+						0,
+						1,
+						0,
+						0
+					],
+					[
+						0,
+						0,
+						0,
+						0,
+						0
+					]
+				],
+				"1": [
+					[
+						0,
+						0,
+						0,
+						0,
+						0
+					],
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						0,
+						0,
+						0,
+						0,
+						0
+					]
+				],
+				"2": [
+					[
+						0,
+						0,
+						0,
+						0,
+						0
+					],
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						0,
+						0,
+						1,
+						0,
+						0
+					]
+				],
+				"3": [
+					[
+						0,
+						0,
+						1,
+						0,
+						0
+					],
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						0,
+						0,
+						1,
+						0,
+						0
+					]
+				],
+				"4": [
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						0,
+						0,
+						0,
+						0,
+						0
+					]
+				],
+				"5": [
+					[
+						0,
+						0,
+						1,
+						0,
+						0
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						0,
+						0,
+						1,
+						0,
+						0
+					]
+				],
+				"6": [
+					[
+						0,
+						1,
+						0,
+						1,
+						0
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						0,
+						0,
+						1,
+						0,
+						0
+					]
+				],
+				"7": [
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					]
+				],
+				"8": [
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						0,
+						0,
+						0,
+						0,
+						0
+					]
+				],
+				"9": [
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					]
+				],
+				"10": [
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						0,
+						1,
+						0,
+						1,
+						0
+					]
+				],
+				"11": [
+					[
+						0,
+						1,
+						1,
+						1,
+						0
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					]
+				],
+				"12": [
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						1,
+						1,
+						0,
+						1,
+						1
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					]
+				],
+				"13": [
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					],
+					[
+						1,
+						1,
+						1,
+						1,
+						1
+					]
+				]
+			},
+			"maxD": 27,
+			"minD": 0,
+			"levels": [{
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 1,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 1,
+				"hiddenSymbols": 1,
+				"distractorSymbols": 0,
+				"selectableDistractors": false,
+				"pattern": 0,
+				"memorizeTimeout": 6,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 2,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 1,
+				"hiddenSymbols": 2,
+				"distractorSymbols": 0,
+				"selectableDistractors": false,
+				"pattern": 0,
+				"memorizeTimeout": 6,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 3,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 1,
+				"hiddenSymbols": 2,
+				"distractorSymbols": 0,
+				"selectableDistractors": false,
+				"pattern": 1,
+				"memorizeTimeout": 9,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 4,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 1,
+				"hiddenSymbols": 3,
+				"distractorSymbols": 0,
+				"selectableDistractors": false,
+				"pattern": 1,
+				"memorizeTimeout": 9,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 5,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 1,
+				"hiddenSymbols": 3,
+				"distractorSymbols": 1,
+				"selectableDistractors": false,
+				"pattern": 2,
+				"memorizeTimeout": 9,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 6,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 1,
+				"hiddenSymbols": 3,
+				"distractorSymbols": 1,
+				"selectableDistractors": false,
+				"pattern": 2,
+				"memorizeTimeout": 9,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 7,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 2,
+				"hiddenSymbols": 4,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 3,
+				"memorizeTimeout": 12,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 8,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 2,
+				"hiddenSymbols": 4,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 3,
+				"memorizeTimeout": 12,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 9,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 2,
+				"hiddenSymbols": 5,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 4,
+				"memorizeTimeout": 15,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 10,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 2,
+				"hiddenSymbols": 5,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 4,
+				"memorizeTimeout": 15,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 11,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 2,
+				"hiddenSymbols": 6,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 5,
+				"memorizeTimeout": 18,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 12,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 2,
+				"hiddenSymbols": 6,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 5,
+				"memorizeTimeout": 18,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 13,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 2,
+				"hiddenSymbols": 7,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 6,
+				"memorizeTimeout": 21,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 14,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 7,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 6,
+				"memorizeTimeout": 21,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 15,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 8,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 7,
+				"memorizeTimeout": 24,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 16,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 8,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 7,
+				"memorizeTimeout": 24,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 17,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 9,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 8,
+				"memorizeTimeout": 27,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 18,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 9,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 8,
+				"memorizeTimeout": 27,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 19,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 10,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 9,
+				"memorizeTimeout": 30,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 20,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 10,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 9,
+				"memorizeTimeout": 30,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 21,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 11,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 10,
+				"memorizeTimeout": 33,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 22,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 4,
+				"hiddenSymbols": 11,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 10,
+				"memorizeTimeout": 33,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 23,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 4,
+				"hiddenSymbols": 12,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 11,
+				"memorizeTimeout": 36,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 24,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 4,
+				"hiddenSymbols": 12,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 11,
+				"memorizeTimeout": 36,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 25,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 4,
+				"hiddenSymbols": 13,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 12,
+				"memorizeTimeout": 39,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 26,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 4,
+				"hiddenSymbols": 13,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 12,
+				"memorizeTimeout": 39,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 27,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 14,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 13,
+				"memorizeTimeout": 42,
+				"experience points": 1
+			}, {
+				"timeout": -1,
+				"goodRuns": 2,
+				"badRuns": 2,
+				"score": 28,
+				"multiplierSteps": [],
+				"warmUpRounds": 0,
+				"wrongSymbols": 3,
+				"hiddenSymbols": 14,
+				"distractorSymbols": 1,
+				"selectableDistractors": true,
+				"pattern": 13,
+				"memorizeTimeout": 42,
+				"experience points": 1
+			}]
+		}
+	}
+}

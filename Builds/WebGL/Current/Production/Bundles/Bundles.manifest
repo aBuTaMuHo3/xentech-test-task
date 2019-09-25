@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 2024697306
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: hud
+      Dependencies:
+        Dependency_0: fonts
+    Info_1:
+      Name: dialogue
+      Dependencies:
+        Dependency_0: general
+        Dependency_1: fonts
+    Info_2:
+      Name: minhud
+      Dependencies:
+        Dependency_0: general
+    Info_3:
+      Name: background
+      Dependencies: {}
+    Info_4:
+      Name: memoflow
+      Dependencies:
+        Dependency_0: general
+        Dependency_1: fonts
+    Info_5:
+      Name: general
+      Dependencies:
+        Dependency_0: fonts
+    Info_6:
+      Name: fonts
+      Dependencies:
+        Dependency_0: general
+    Info_7:
+      Name: flashglance
+      Dependencies: {}

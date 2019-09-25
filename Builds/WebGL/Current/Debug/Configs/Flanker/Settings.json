@@ -1,0 +1,33 @@
+{
+	"id": "Flanker",
+	"localization": {
+	},
+	"configs": {
+		"config":"Configs/Flanker/Config.json"
+	},
+	"bundles": [
+		{
+			"id": "Flanker",
+			"path": "Bundles/flanker",
+			"cache": false
+		},
+		{
+			"id": "HUD",
+			"path": "Bundles/hud",
+			"cache": false
+		}
+	],
+	"contexts": [
+		{
+			"id": "Flanker",
+			"contexts": [
+				{
+					"id": "HUD"
+				},
+				{
+					"id": "Dialogue"
+				}
+			]
+		}
+	]
+}

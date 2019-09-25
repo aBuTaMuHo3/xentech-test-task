@@ -1,0 +1,51 @@
+{
+    "exercise": {
+        "id": "QuickSwitch",
+        "settingsClassName": "QuickSwitch.Model.QuickSwitchConfiguration,QuickSwitch",
+        "exerciseConfig": {
+            "modelClassName": "QuickSwitch.Model.QuickSwitchModel,QuickSwitch",
+            "controllerClassName": "QuickSwitch.Controller.QuickSwitchController,QuickSwitch",
+            "viewClassName": "QuickSwitch.View.QuickSwitchView,QuickSwitch",
+            "assetClassName": "QuickSwitch.Assets.QuickSwitchAssets,QuickSwitch",
+            "terminatorClassNames": [
+                "ExerciseEngine.Terminator.TimeBasedTerminator,ExerciseEngine",
+                "ExerciseEngine.Terminator.SurvivorTerminator,ExerciseEngine"
+            ],
+            "tutorial": {},
+            "maxD": 1,
+            "minD": 0,
+            "enforceTimeout": true,
+            "levels": [
+                {
+                    "timeout": 10,
+                    "goodRuns": 1000,
+                    "badRuns": 1000,
+                    "score": 1,
+                    "multiplierSteps": [],
+					"lengths": {
+						"practice": 8,
+						"test": 25
+					},
+					"types": [
+						"Numbers"
+					]
+                },
+                {
+                    "timeout": 15,
+                    "goodRuns": 1000,
+                    "badRuns": 1000,
+                    "score": 1,
+                    "multiplierSteps": [],
+					"lengths": {
+						"practice": 8,
+						"test": 25
+					},
+					"types": [
+						"Numbers",
+						"Characters"
+					]
+                }
+             ]
+        }
+    }
+}

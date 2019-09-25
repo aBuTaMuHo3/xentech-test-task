@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 1342914481
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d2df2858e7294f5f52318fc9db080553
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: d2ef14a05932d79e5739b19074c064e0
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 96d5db2bd5520494980feddb25fbdacb, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Modules/Runner/Background/Background.unity
+Dependencies: []

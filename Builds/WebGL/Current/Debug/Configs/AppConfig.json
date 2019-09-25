@@ -1,0 +1,42 @@
+{
+	"basePath": "https://nncms.s3-eu-central-1.amazonaws.com/assets/edison/exercises/brain",
+	"defaultExercise": "Memobox",
+	"defaultMode": "workout",
+	"startedAt": 0.0,
+	"antiAliasing": 4,
+	"enableLogging": 0,
+	"language": "en",
+	"localization": {
+		"ok": "Ok",
+		"none": "None",
+		"continue": "Continue",
+		"yes": "Yes",
+		"no": "No",
+		"pause_text": "The assessment is paused"
+	},
+	"bundles": [
+		{
+			"id": "background",
+			"path": "Bundles/background",
+			"cache": true,
+			"scenes": [
+				"Background"
+			]
+		},
+		{
+			"id": "fonts",
+			"path": "Bundles/fonts",
+			"cache": true
+		},
+		{
+			"id": "general",
+			"path": "Bundles/general",
+			"cache": true
+		},
+		{
+			"id": "dialogue",
+			"path": "Bundles/dialogue",
+			"cache": true
+		}
+	]
+}

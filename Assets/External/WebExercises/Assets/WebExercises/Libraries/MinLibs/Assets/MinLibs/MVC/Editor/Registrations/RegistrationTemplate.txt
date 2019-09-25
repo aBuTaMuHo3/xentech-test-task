@@ -1,0 +1,43 @@
+﻿using MinLibs.MVC;
+
+public class // CLASSNAME : IApplyRegistrations
+{
+    [Inject] public IContext context;
+
+    public void Execute (params object[] args)
+    {
+// >>> PARAMETERS
+// PARAMETERS
+// <<< PARAMETERS
+      
+            
+// >>> DECLARATIONS
+// DECLARATIONS
+// <<< DECLARATIONS
+            
+            
+// >>> REGISTRATIONS
+// REGISTRATIONS
+// <<< REGISTRATIONS
+            
+            
+// >>> HANDLERS
+// HANDLERS
+// <<< HANDLERS
+            
+            
+// >>> ASSIGNMENTS
+// ASSIGNMENTS
+// <<< ASSIGNMENTS
+            
+            
+// >>> CLEANUPS
+// CLEANUPS
+// <<< CLEANUPS
+            
+            
+// >>> POSTINJECTIONS
+// POSTINJECTIONS
+// <<< POSTINJECTIONS
+    }
+}

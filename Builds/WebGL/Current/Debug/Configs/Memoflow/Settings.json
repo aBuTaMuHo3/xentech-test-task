@@ -1,0 +1,35 @@
+{
+	"id": "Memoflow",
+	"localization": {
+		"advice_text": "Please memorize the numbers above",
+		"question_text": "Are the two outer numbers identical?"
+	},
+	"configs": {
+		"config":"Configs/Memoflow/Config.json"
+	},
+	"bundles": [
+		{
+			"id": "Memoflow",
+			"path": "Bundles/memoflow",
+			"cache": false
+		},
+		{
+			"id": "MinHUD",
+			"path": "Bundles/minhud",
+			"cache": false
+		}
+	],
+	"contexts": [
+		{
+			"id": "Memoflow",
+			"contexts": [
+				{
+					"id": "MinHUD"
+				},
+				{
+					"id": "Dialogue"
+				}
+			]
+		}
+	]
+}

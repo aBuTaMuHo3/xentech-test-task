@@ -1,0 +1,79 @@
+ManifestFileVersion: 0
+CRC: 3431924699
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 73dd76d290989aee050cea1357a12041
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9e714332171285623b3dec5f4ff709df
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 81
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b39b89021567b4eebad347e8cb714ca7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2f702312ab7b4c3d8619cc74ad5d983f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: c7021ce3105c54d0ca3c22d384c3dc2b, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8b2589c52e0d4a2f902cd43d9ffec33e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b2a197d727a7649468c12d176fdd2c43, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8ed3836d78a24fe79c9d22eb37528f48, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9d9ba0aeb8c0f4226b5bbfa78012e879, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f67a147fef4d24a05b5125365b6effe7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b799659f032147c2b123110ff408d2ef, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 223
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Modules/HUD/HUD.unity
+Dependencies:
+- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/fonts

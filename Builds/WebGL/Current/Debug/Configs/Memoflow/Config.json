@@ -1,0 +1,72 @@
+{
+    "exercise": {
+        "id": "Memoflow",
+        "settingsClassName": "Memoflow.Model.MemoflowConfiguration,Memoflow",
+        "exerciseConfig": {
+            "modelClassName": "Memoflow.Model.MemoflowModel,Memoflow",
+            "controllerClassName": "Memoflow.Controller.MemoflowController,Memoflow",
+            "viewClassName": "Memoflow.View.MemoflowView,Memoflow",
+            "assetClassName": "Memoflow.Assets.MemoflowAssets,Memoflow",
+            "terminatorClassNames": [
+                "ExerciseEngine.Terminator.TimeBasedTerminator,ExerciseEngine",
+                "ExerciseEngine.Terminator.SurvivorTerminator,ExerciseEngine"
+            ],
+            "tutorial": {},
+            "colorPerDiff": [
+                "Orange",
+                "Red",
+                "Purple",
+                "Blue",
+                "Green"
+            ],
+            "matchProbability": 0.5,
+            "maxColors": 1,
+            "maxSymbols": 9,
+            "maxD": 3,
+            "minD": 0,
+            "enforceTimeout": true,
+            "levels": [
+                {
+                    "timeout": 5,
+                    "goodRuns": 100,
+                    "badRuns": 100,
+                    "score": 1,
+                    "multiplierSteps": [
+                    ],
+                    "warmUpRounds": 0,
+                    "numCards": 2
+                },
+                {
+                    "timeout": 5,
+                    "goodRuns": 100,
+                    "badRuns": 100,
+                    "score": 1,
+                    "multiplierSteps": [
+                    ],
+                    "warmUpRounds": 0,
+                    "numCards": 3
+                },
+                {
+                    "timeout": 5,
+                    "goodRuns": 100,
+                    "badRuns": 100,
+                    "score": 1,
+                    "multiplierSteps": [
+                    ],
+                    "warmUpRounds": 0,
+                    "numCards": 4
+                },
+                {
+                    "timeout": 5,
+                    "goodRuns": 100,
+                    "badRuns": 100,
+                    "score": 1,
+                    "multiplierSteps": [
+                    ],
+                    "warmUpRounds": 0,
+                    "numCards": 5
+                }
+            ]
+        }
+    }
+}

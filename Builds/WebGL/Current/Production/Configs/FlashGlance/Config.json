@@ -1,0 +1,279 @@
+{
+    "exercise": {
+        "id": "FlashGlance",
+        "settingsClassName": "FlashGlance.Model.FlashGlanceConfiguration,FlashGlance",
+        "exerciseConfig": {
+            "modelClassName": "FlashGlance.Model.FlashGlanceModel,FlashGlance",
+            "controllerClassName": "FlashGlance.Controller.FlashGlanceController,FlashGlance",
+            "viewClassName": "FlashGlance.View.FlashGlanceView,FlashGlance",
+            "assetClassName": "FlashGlance.Assets.FlashGlanceAssets,FlashGlance",
+            "terminatorClassNames": [
+                "ExerciseEngine.Terminator.TimeBasedTerminator,ExerciseEngine",
+                "ExerciseEngine.Terminator.SurvivorTerminator,ExerciseEngine"
+            ],
+            "tutorial": {},
+            "mapWidth": 9,
+            "mapHeight": 4,
+            "backgroundStartColour": [
+                165,
+                216,
+                129
+            ],
+            "backgroundEndColour": [
+                132,
+                177,
+                99
+            ],
+            "backgroundVectorAngle": 225,
+            "maxD": 6,
+            "minD": 0,
+            "levels": [
+                {
+                    "timeout": -1,
+                    "goodRuns": 10,
+                    "badRuns": 1,
+                    "score": 1,
+                    "multiplierSteps": [],
+                    "warmUpRounds": 0,
+                    "startItems": 5,
+                    "startCypher": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "itemsOnRound": {
+                        "min": 5,
+                        "max": 100
+                    },
+                    "rotationProbability": 0,
+                    "scalingProbability": 0,
+                    "itemSpawning": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 1
+                    },
+                    "itemMoving": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 1
+                    },
+                    "itemSwitching": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 1
+                    },
+                    "nextItemFormula": "x+1"
+                },
+                {
+                    "timeout": 6,
+                    "goodRuns": 15,
+                    "badRuns": 3,
+                    "score": 2,
+                    "multiplierSteps": [],
+                    "warmUpRounds": 3,
+                    "startItems": 6,
+                    "startCypher": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "itemsOnRound": {
+                        "min": 6,
+                        "max": 100
+                    },
+                    "rotationProbability": 0.1,
+                    "scalingProbability": 0.1,
+                    "itemSpawning": {
+                        "minDelay": 3.5,
+                        "maxDelay": 4.5,
+                        "amount": 1
+                    },
+                    "itemMoving": {
+                        "minDelay": 3.5,
+                        "maxDelay": 4.5,
+                        "amount": 1
+                    },
+                    "itemSwitching": {
+                        "minDelay": 3.5,
+                        "maxDelay": 4.5,
+                        "amount": 1
+                    },
+                    "nextItemFormula": "x+1"
+                },
+                {
+                    "timeout": 5,
+                    "goodRuns": 20,
+                    "badRuns": 3,
+                    "score": 3,
+                    "multiplierSteps": [],
+                    "warmUpRounds": 3,
+                    "startItems": 8,
+                    "startCypher": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "itemsOnRound": {
+                        "min": 8,
+                        "max": 100
+                    },
+                    "rotationProbability": 0.2,
+                    "scalingProbability": 0.2,
+                    "itemSpawning": {
+                        "minDelay": 2.5,
+                        "maxDelay": 3.5,
+                        "amount": 1
+                    },
+                    "itemMoving": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 1
+                    },
+                    "itemSwitching": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 1
+                    },
+                    "nextItemFormula": "x+1"
+                },
+                {
+                    "timeout": 4,
+                    "goodRuns": 20,
+                    "badRuns": 3,
+                    "score": 4,
+                    "multiplierSteps": [],
+                    "warmUpRounds": 3,
+                    "startItems": 10,
+                    "startCypher": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "itemsOnRound": {
+                        "min": 10,
+                        "max": 100
+                    },
+                    "rotationProbability": 0.3,
+                    "scalingProbability": 0.3,
+                    "itemSpawning": {
+                        "minDelay": 1.75,
+                        "maxDelay": 2.25,
+                        "amount": 1
+                    },
+                    "itemMoving": {
+                        "minDelay": 3.5,
+                        "maxDelay": 4.5,
+                        "amount": 2
+                    },
+                    "itemSwitching": {
+                        "minDelay": 3.5,
+                        "maxDelay": 4.5,
+                        "amount": 2
+                    },
+                    "nextItemFormula": "x+1"
+                },
+                {
+                    "timeout": 3,
+                    "goodRuns": 20,
+                    "badRuns": 3,
+                    "score": 5,
+                    "multiplierSteps": [],
+                    "warmUpRounds": 3,
+                    "startItems": 12,
+                    "startCypher": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "itemsOnRound": {
+                        "min": 12,
+                        "max": 100
+                    },
+                    "rotationProbability": 0.4,
+                    "scalingProbability": 0.4,
+                    "itemSpawning": {
+                        "minDelay": 1.25,
+                        "maxDelay": 1.75,
+                        "amount": 1
+                    },
+                    "itemMoving": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 2
+                    },
+                    "itemSwitching": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 2
+                    },
+                    "nextItemFormula": "x+1"
+                },
+                {
+                    "timeout": 2,
+                    "goodRuns": 20,
+                    "badRuns": 3,
+                    "score": 6,
+                    "multiplierSteps": [],
+                    "warmUpRounds": 3,
+                    "startItems": 14,
+                    "startCypher": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "itemsOnRound": {
+                        "min": 14,
+                        "max": 100
+                    },
+                    "rotationProbability": 0.5,
+                    "scalingProbability": 0.5,
+                    "itemSpawning": {
+                        "minDelay": 1,
+                        "maxDelay": 1.5,
+                        "amount": 1
+                    },
+                    "itemMoving": {
+                        "minDelay": 3.5,
+                        "maxDelay": 4.5,
+                        "amount": 3
+                    },
+                    "itemSwitching": {
+                        "minDelay": 3.5,
+                        "maxDelay": 4.5,
+                        "amount": 3
+                    },
+                    "nextItemFormula": "x+1"
+                },
+                {
+                    "timeout": 1.8,
+                    "goodRuns": 1,
+                    "badRuns": 3,
+                    "score": 7,
+                    "multiplierSteps": [],
+                    "warmUpRounds": 3,
+                    "startItems": 16,
+                    "startCypher": {
+                        "min": 1,
+                        "max": 1
+                    },
+                    "itemsOnRound": {
+                        "min": 16,
+                        "max": 100
+                    },
+                    "rotationProbability": 0.6,
+                    "scalingProbability": 0.6,
+                    "itemSpawning": {
+                        "minDelay": 1,
+                        "maxDelay": 1.25,
+                        "amount": 1
+                    },
+                    "itemMoving": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 3
+                    },
+                    "itemSwitching": {
+                        "minDelay": 4.5,
+                        "maxDelay": 5.5,
+                        "amount": 3
+                    },
+                    "nextItemFormula": "x+1"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13cbea1e6c9cc477d8ebf169b300ac7d, type: 3}
+  m_Name: Debug
+  m_EditorClassIdentifier: 
+  development: 1
+  allowDebugging: 1
+  connectWithProfiler: 0
+  compressWithLz4: 0
+  memorySize: 64
+  exceptionSupport: 3
+  compressionFormat: 1
+  linkerTarget: 1
+  debugSymbols: 1
+  dataCaching: 0
+  strippingLevel: 0

@@ -1,0 +1,35 @@
+{
+	"id": "ColorCraze",
+	"localization": {
+		
+	},
+	"configs": {
+		"config":"Configs/ColorCraze/Config.json",
+		"levels":"Configs/ColorCraze/Levels.json"
+	},
+	"bundles": [
+		{
+			"id": "ColorCraze",
+			"path": "Bundles/colorcraze",
+			"cache": false
+		},
+		{
+			"id": "MinHUD",
+			"path": "Bundles/minhud",
+			"cache": false
+		}
+	],
+	"contexts": [
+		{
+			"id": "ColorCraze",
+			"contexts": [
+				{
+					"id": "MinHUD"
+				},
+				{
+					"id": "Dialogue"
+				}
+			]
+		}
+	]
+}

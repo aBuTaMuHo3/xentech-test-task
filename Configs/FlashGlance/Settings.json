@@ -1,0 +1,33 @@
+{
+	"id": "FlashGlance",
+	"localization": {
+	},
+	"configs": {
+		"config":"Configs/FlashGlance/Config.json"
+	},
+	"bundles": [
+		{
+			"id": "FlashGlance",
+			"path": "Bundles/flashglance",
+			"cache": false
+		},
+		{
+			"id": "HUD",
+			"path": "Bundles/hud",
+			"cache": false
+		}
+	],
+	"contexts": [
+		{
+			"id": "FlashGlance",
+			"contexts": [
+				{
+					"id": "HUD"
+				},
+				{
+					"id": "Dialogue"
+				}
+			]
+		}
+	]
+}

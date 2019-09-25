@@ -1,0 +1,59 @@
+{
+    "exercise": {
+        "id": "PathFinderReverse",
+        "settingsClassName": "PathFinder.Model.PathFinderConfiguration,PathFinder",
+        "exerciseConfig": {
+            "modelClassName": "PathFinder.Model.PathFinderModel,PathFinder",
+            "controllerClassName": "PathFinder.Controller.PathFinderController,PathFinder",
+            "viewClassName": "PathFinder.View.PathFinderReverseView,PathFinder",
+            "assetClassName": "PathFinder.Assets.PathFinderAssets,PathFinder",
+            "terminatorClassNames": [
+                "ExerciseEngine.Terminator.TimeBasedTerminator,ExerciseEngine",
+                "ExerciseEngine.Terminator.SurvivorTerminator,ExerciseEngine"
+            ],
+            "tutorial": {},
+            "dotVisualizationDefinitions": [
+                {
+                    "color": "0xf1872d"
+                },
+                {
+                    "color": "0xdcbf27"
+                },
+                {
+                    "color": "0x81ad20"
+                },
+                {
+                    "color": "0x116b69"
+                },
+                {
+                    "color": "0x2b50a1"
+                },
+                {
+                    "color": "0xc21a81"
+                }
+            ],
+            "maxD": 9,
+            "minD": 0,
+            "enforceTimeout": true,
+            "levels": [
+                {
+                    "timeout": -1,
+                    "goodRuns": 2000,
+                    "badRuns": 1000,
+                    "score": 1,
+                    "multiplierSteps": [],
+                    "warmUpRounds": 0,
+                    "pathLenght": {
+                        "min": 2,
+                        "max": 14
+                    },
+                    "dots": [],
+                    "visualizations": 1,
+                    "numCrossings": "high",
+                    "dotDistribution": "wide",
+                    "presentationSpeed": 500
+                },
+             ]
+        }
+    }
+}

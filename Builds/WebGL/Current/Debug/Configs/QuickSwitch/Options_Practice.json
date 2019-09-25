@@ -1,0 +1,5 @@
+{
+	"difficulty": 1,
+	"mode": "practice",
+	"options": "{\"maxTotalGoodRuns\": 8, \"maxTotalBadRuns\": 3, \"maxConsecutiveBadRuns\": 3}"
+}
