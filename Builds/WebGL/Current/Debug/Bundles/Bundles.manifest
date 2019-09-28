@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 3919615132
+CRC: 3877150440
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -24,10 +24,14 @@ AssetBundleManifest:
         Dependency_0: general
         Dependency_1: fonts
     Info_5:
-      Name: general
+      Name: flashglance
       Dependencies:
         Dependency_0: fonts
     Info_6:
+      Name: general
+      Dependencies:
+        Dependency_0: fonts
+    Info_7:
       Name: fonts
       Dependencies:
         Dependency_0: general

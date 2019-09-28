@@ -1,0 +1,5 @@
+{
+	"difficulty": 5,
+	"mode": "workout",
+	"options": "{\"timeout\":120, \"preventInputPause\":true}"
+}

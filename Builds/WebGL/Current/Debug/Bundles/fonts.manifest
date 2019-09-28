@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1495516384
+CRC: 3709374067
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 71f2342db0f2a88fffc5f12dc1dc5dd0
+    Hash: 3535b2b9929f53e53c37fbec48ea1465
   TypeTreeHash:
     serializedVersion: 2
     Hash: d0b2f0e67a49883fd83625973d09fe14
@@ -22,4 +22,4 @@ ClassTypes:
 Assets:
 - Assets/Modules/Fonts/Rubik-Regular SDF.asset
 Dependencies:
-- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/general
+- E:/Unity/Rep/xentech-test-task/Builds/WebGL/Current/Debug/Bundles/general

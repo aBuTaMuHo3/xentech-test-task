@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3431924699
+CRC: 229409418
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 73dd76d290989aee050cea1357a12041
+    Hash: f480e45fc0133ec37b4e837ac53d405d
   TypeTreeHash:
     serializedVersion: 2
     Hash: 9e714332171285623b3dec5f4ff709df
@@ -76,4 +76,4 @@ ClassTypes:
 Assets:
 - Assets/Modules/HUD/HUD.unity
 Dependencies:
-- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/fonts
+- E:/Unity/Rep/xentech-test-task/Builds/WebGL/Current/Debug/Bundles/fonts

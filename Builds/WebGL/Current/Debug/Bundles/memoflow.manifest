@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2313172537
+CRC: 1459710490
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e718c9e00964ac0b82c568c775becc0c
+    Hash: 6acec8b8ba810791457fd66c048334a2
   TypeTreeHash:
     serializedVersion: 2
     Hash: 0ffc947d1f5b1a49a3ef1c9adbcfd1a7
@@ -80,5 +80,5 @@ ClassTypes:
 Assets:
 - Assets/Modules/Exercises/Memoflow/Memoflow.unity
 Dependencies:
-- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/general
-- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/fonts
+- E:/Unity/Rep/xentech-test-task/Builds/WebGL/Current/Debug/Bundles/general
+- E:/Unity/Rep/xentech-test-task/Builds/WebGL/Current/Debug/Bundles/fonts

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2596648213
+CRC: 3197643217
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d6eb8f67b27bc65f85e8bc649017c6e3
+    Hash: 9be3a20dba8b1308509642691d26d329
   TypeTreeHash:
     serializedVersion: 2
     Hash: 793077a4d2a947c8d06c74d092716d1a
@@ -52,4 +52,4 @@ Assets:
 - Assets/External/WebExercises/Assets/WebExercises/Exercises/Shared/Components/LabelButton.prefab
 - Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile.shader
 Dependencies:
-- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/fonts
+- E:/Unity/Rep/xentech-test-task/Builds/WebGL/Current/Debug/Bundles/fonts

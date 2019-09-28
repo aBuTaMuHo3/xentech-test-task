@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bb1f02fdf6594a76b4a784680ba861d, type: 3}
   m_Name: AppSettings
   m_EditorClassIdentifier: 
-  url: http://localhost:8000
-  basePath: Builds/WebGL/Current/Production
+  url: http://localhost:8000/
+  basePath: Builds/WebGL/Current/Production/

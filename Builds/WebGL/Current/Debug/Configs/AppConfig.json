@@ -1,6 +1,6 @@
 {
 	"basePath": "https://nncms.s3-eu-central-1.amazonaws.com/assets/edison/exercises/brain",
-	"defaultExercise": "Memobox",
+	"defaultExercise": "FlashGlance",
 	"defaultMode": "workout",
 	"startedAt": 0.0,
 	"antiAliasing": 4,

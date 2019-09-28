@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2256480505
+CRC: 200245381
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 46e48c8999446735311e42adb9f78961
+    Hash: 4b48a5bbf8ef5bb96a3be5ea409c117a
   TypeTreeHash:
     serializedVersion: 2
     Hash: 2de8f2c752648ecf63f9e42c378d5769
@@ -74,5 +74,5 @@ ClassTypes:
 Assets:
 - Assets/Modules/Dialogue/Dialogue.unity
 Dependencies:
-- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/general
-- /Users/thomas/Github/web_unity_sandbox/Builds/WebGL/Current/Debug/Bundles/fonts
+- E:/Unity/Rep/xentech-test-task/Builds/WebGL/Current/Debug/Bundles/general
+- E:/Unity/Rep/xentech-test-task/Builds/WebGL/Current/Debug/Bundles/fonts

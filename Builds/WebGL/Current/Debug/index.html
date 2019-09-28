@@ -27,6 +27,14 @@
 
 		window.appReady = function() {
 			load("AppConfig.json", function (data) {
+			    if(!exerciseId) {
+				    exerciseId = data.defaultExercise;
+				}
+
+                if(!mode) {
+                    mode = data.defaultMode;
+                }
+			    
 				data.startedAt = startUpTime;
 				sendMessage("InitializeApp", data);
 			});
@@ -45,8 +53,6 @@
 		};
 
 		window.completeExercise = function(result) {
-			mode = mode == "practice" ? "test" : "practice";
-			
 			engineReady();
 		};
 
