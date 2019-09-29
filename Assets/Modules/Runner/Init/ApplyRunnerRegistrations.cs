@@ -24,7 +24,7 @@ public class ApplyRunnerRegistrations : IApplyRegistrations
 		var webExercisesRunnerRunnerSettings = new WebExercises.Runner.RunnerSettings();
 		var minLibsUtilsSystemRandom = new MinLibs.Utils.SystemRandom();
 		var minLibsMVCTimers = new MinLibs.MVC.Timers();
-		var webExercisesRunnerFrontendSender = new WebExercises.Runner.FrontendSender();
+		var webExercisesRunnerFakeFrontendSender = new WebExercises.Runner.FakeFrontendSender();
 		var webExercisesRunnerBundles = new WebExercises.Runner.Bundles();
 		var webExercisesRunnerScenes = new WebExercises.Runner.Scenes();
 		var webExercisesSharedHotKeys = new WebExercises.Shared.HotKeys();
@@ -56,7 +56,7 @@ public class ApplyRunnerRegistrations : IApplyRegistrations
 		context.RegisterInstance<WebExercises.Runner.IRunnerSettings>(webExercisesRunnerRunnerSettings, RegisterFlags.PreventInjections);
 		context.RegisterInstance<MinLibs.Utils.IRandom>(minLibsUtilsSystemRandom, RegisterFlags.PreventInjections);
 		context.RegisterInstance<MinLibs.MVC.ITimers>(minLibsMVCTimers, RegisterFlags.PreventInjections);
-		context.RegisterInstance<WebExercises.Runner.IFrontendSender>(webExercisesRunnerFrontendSender, RegisterFlags.PreventInjections);
+		context.RegisterInstance<WebExercises.Runner.IFrontendSender>(webExercisesRunnerFakeFrontendSender, RegisterFlags.PreventInjections);
 		context.RegisterInstance<WebExercises.Runner.IBundles>(webExercisesRunnerBundles, RegisterFlags.PreventInjections);
 		context.RegisterInstance<WebExercises.Runner.IScenes>(webExercisesRunnerScenes, RegisterFlags.PreventInjections);
 		context.RegisterInstance<WebExercises.Shared.IHotKeys>(webExercisesSharedHotKeys, RegisterFlags.PreventInjections);
@@ -83,11 +83,8 @@ public class ApplyRunnerRegistrations : IApplyRegistrations
 		}, RegisterFlags.NoCache | RegisterFlags.PreventInjections);
 
 		context.RegisterHandler<WebExercises.Runner.IAppLifeCycleMediator>(host => {
-			var webExercisesRunnerAppLifeCycleMediator = new WebExercises.Runner.AppLifeCycleMediator();
-			webExercisesRunnerAppLifeCycleMediator.appState = context.Get<WebExercises.Runner.IAppState>();
-			webExercisesRunnerAppLifeCycleMediator.onBlockApp = context.Get<WebExercises.Shared.OnBlockApp>();
-
-			return webExercisesRunnerAppLifeCycleMediator;
+			var webExercisesRunnerDummyAppLifeCycleMediator = new WebExercises.Runner.DummyAppLifeCycleMediator();
+			return webExercisesRunnerDummyAppLifeCycleMediator;
 		}, RegisterFlags.NoCache | RegisterFlags.PreventInjections);
 
 		context.RegisterHandler<WebExercises.Runner.FrontendReceiverMediator>(host => {
@@ -112,6 +109,14 @@ public class ApplyRunnerRegistrations : IApplyRegistrations
 		webExercisesRunnerSetupRunnerContext.hotKeys = context.Get<WebExercises.Shared.IHotKeys>();
 		webExercisesRunnerSetupRunnerContext.mediators = context.Get<MinLibs.MVC.IMediators>();
 		webExercisesRunnerSetupRunnerContext.signals = context.Get<MinLibs.Signals.ISignalsManager>();
+
+		webExercisesRunnerFakeFrontendSender.logger = minLibsLoggingILogging;
+		webExercisesRunnerFakeFrontendSender.settings = context.Get<WebExercises.Runner.IRunnerSettings>();
+		webExercisesRunnerFakeFrontendSender.resources = context.Get<MinLibs.Utils.IResources>();
+		webExercisesRunnerFakeFrontendSender.getConfig = context.Get<WebExercises.Runner.IGetConfig>();
+		webExercisesRunnerFakeFrontendSender.initApp = context.Get<WebExercises.Runner.IInitApp>();
+		webExercisesRunnerFakeFrontendSender.loadExercise = context.Get<WebExercises.Runner.ILoadExercise>();
+		webExercisesRunnerFakeFrontendSender.onStartExercise = webExercisesRunnerOnStartExercise;
 
 		webExercisesSharedHotKeys.input = context.Get<MinLibs.Utils.IInput>();
 

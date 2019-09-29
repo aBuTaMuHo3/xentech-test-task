@@ -14,6 +14,7 @@ namespace WebExercises.FlashGlance
         [SerializeField] private Image selected;
         [SerializeField] private float duration;
         [SerializeField] private CanvasGroup group;
+        [SerializeField] private float radius;
 
         private RectTransform _rect;
 
@@ -52,6 +53,8 @@ namespace WebExercises.FlashGlance
         {
             return transform.DOLocalMoveX(X + distance, duration);
         }
+
+        
 
         public Tweener Appear()
         {

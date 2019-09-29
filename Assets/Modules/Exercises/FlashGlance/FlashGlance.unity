@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 213085854}
   - component: {fileID: 213085855}
-  - component: {fileID: 213085857}
   m_Layer: 5
   m_Name: Field
   m_TagString: Untagged
@@ -167,27 +166,6 @@ MonoBehaviour:
     type: 3}
   slider: {fileID: 1155297894}
   sliderQueueLength: 2
---- !u!223 &213085857
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 213085853}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &462309184
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,7 +482,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &1817519699
 MonoBehaviour:

@@ -53,6 +53,16 @@ namespace WebExercises.FlashGlance
             }
         }
 
+        public float Size
+        {
+            private get { return Rect.rect.size.x; }
+            set
+            {
+                Rect.sizeDelta = new Vector2(value, value);
+            }
+        }
+
+
         public int Rotation
         {
             get { return (int)transform.rotation.eulerAngles.z; }
@@ -88,9 +98,10 @@ namespace WebExercises.FlashGlance
             }
         }
 
-        public void OnMouseOver()
+        public Button Button
         {
-            Debug.Log("mouse on " + label.text);
+            get { return button; }
+            
         }
     }
 }

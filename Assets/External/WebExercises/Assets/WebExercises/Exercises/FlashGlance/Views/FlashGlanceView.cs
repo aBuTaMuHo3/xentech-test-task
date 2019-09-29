@@ -48,11 +48,13 @@ namespace WebExercises.FlashGlance
 
         private FlashGlanceRoundDataVO _roundData;
         private readonly IDictionary<SafeHashCodePoint, FlashGlanceItem> _cachedField = new Dictionary<SafeHashCodePoint, FlashGlanceItem>();
+        private readonly IDictionary<SafeHashCodePoint, FlashGlanceRoundItemVO> _cachedItems = new Dictionary<SafeHashCodePoint, FlashGlanceRoundItemVO>();
         private IList<FlashGlanceSliderItem> _sliderItems = new List<FlashGlanceSliderItem>();
         private FlashGlanceSliderItem _hiddenSliderItem;
         private int _fieldHeight;
         private int _fieldWidth;
         private float _gap;
+        private float _itemSize;
         // Called on the very first round, for now here the initial elements can be initialized
         public void CreateInitialRound(IExerciseRoundDataVO dataVo)
         {
@@ -62,7 +64,7 @@ namespace WebExercises.FlashGlance
             _gap = Rect.rect.width/ _fieldWidth;
             var tempGap = Rect.rect.height / _fieldHeight;
             _gap = _gap > tempGap ? tempGap : _gap;
-            Debug.Log(_gap);
+            _itemSize = _gap * 0.8f;
             System.Diagnostics.Debug.WriteLine("CreateInitialRound");
 
             foreach (FlashGlanceRoundItemVO item in _roundData.Items)
@@ -73,7 +75,7 @@ namespace WebExercises.FlashGlance
             InitSlider();
             RoundCreated.Dispatch();
 
-            TestAnswer();
+            //TestAnswer();
         }
 
         
@@ -126,12 +128,16 @@ namespace WebExercises.FlashGlance
                 newItem = Instantiate(itemPrefab, transform);
                 newItem.X = (item.GridPosition.X - _fieldWidth/2f +0.5f) * _gap;
                 newItem.Y = (item.GridPosition.Y - _fieldHeight/2f +0.5f) * _gap;
-                _cachedField.Add(item.GridPosition, newItem);                
+                newItem.Size = _itemSize;
+                _cachedField.Add(item.GridPosition, newItem);
+                newItem.Button.onClick.AddListener(() => OnItemSelected(_cachedItems[item.GridPosition]));
             }
+            _cachedItems[item.GridPosition] = item;
             newItem.Show();
             newItem.gameObject.SetActive(true);
             newItem.SetLabel(item.Cypher.ToString());
             newItem.Scale = item.Scale;
+            
             if(newItem.Rotation != item.Rotation)
                 newItem.Rotation = item.Rotation;
             return newItem;
@@ -142,6 +148,8 @@ namespace WebExercises.FlashGlance
         // This is called every round after the initial one, update the elements here
         public void CreateRound(IExerciseRoundDataVO dataVo)
         {
+            FlashGlanceRoundDataVO lastRoundData = _roundData;
+            var sequence = DOTween.Sequence();
             _roundData = dataVo as FlashGlanceRoundDataVO;
             System.Diagnostics.Debug.WriteLine("CreateRound");
 
@@ -149,12 +157,11 @@ namespace WebExercises.FlashGlance
             {
                 var newItem = InitItem(item);
             }
-
-            UpdateSlider();
-
-            RoundCreated.Dispatch();
+            if(lastRoundData.QuestIndex != _roundData.QuestIndex)
+                sequence = UpdateSlider();
+            sequence.AppendCallback(() => RoundCreated.Dispatch());
             
-            TestAnswer();
+            //TestAnswer();
         }
 
         // Sets correct answer for letting the exercise run round by round
@@ -166,7 +173,7 @@ namespace WebExercises.FlashGlance
                                                + " current index: " + _roundData.QuestIndex);
             
             await Task.Delay(1000);
-            OnItemSelected();
+            OnItemSelected(_roundData.Solutions[0]);
             
         }
 
@@ -191,9 +198,10 @@ namespace WebExercises.FlashGlance
 
         // Suggested callback for the selected item, it needs to dispatch the item's IRoundItem data
         // Replace _roundData.Solutions[0] with the actually selected item's data
-        private void OnItemSelected()
+        private void OnItemSelected(IRoundItem selected)
         {
-            ItemSelected.Dispatch(_roundData.Solutions[0]);
+            //ItemSelected.Dispatch(_roundData.Solutions[0]);
+            ItemSelected.Dispatch(selected);
         }
     }
 }
