@@ -38,6 +38,17 @@ namespace WebExercises.FlashGlance
             }
         }
 
+        public float Y
+        {
+            private get { return transform.localPosition.y; }
+            set
+            {
+                var pos = transform.localPosition;
+                pos.y = value;
+                transform.localPosition = pos;
+            }
+        }
+
         public void SetLabel(string text)
         {
             label.gameObject.SetActive(true);
@@ -54,7 +65,18 @@ namespace WebExercises.FlashGlance
             return transform.DOLocalMoveX(X + distance, duration);
         }
 
-        
+        public Sequence RotateBy(float angle)
+        {
+            Vector3 pos = Quaternion.Euler(0,0,angle) * transform.localPosition;
+
+            return Rect.DOJumpAnchorPos(pos, radius, 1, duration);
+        }
+
+        public void SetRotation(float angle)
+        {
+            Vector3 pos = Quaternion.Euler(0f, 0f, angle) * transform.localPosition;
+            transform.localPosition = pos;
+        }
 
         public Tweener Appear()
         {

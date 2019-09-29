@@ -239,7 +239,7 @@ MonoBehaviour:
   selected: {fileID: 5632166205749033514}
   duration: 0.5
   group: {fileID: 5294979968769470229}
-  radius: 20
+  radius: 5
 --- !u!1 &6531576621192093566
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ namespace WebExercises.FlashGlance
         [SerializeField] private FlashGlanceSliderItem sliderItemPrefab;
         [SerializeField] private Transform slider;
         [SerializeField] private int sliderQueueLength;
+        [SerializeField] private float sliderRotationAngle;
+        [SerializeField] private float sliderRotationRadius;
 
         public Signal<IRoundItem> ItemSelected { get; } = new Signal<IRoundItem>();
         
@@ -64,6 +66,7 @@ namespace WebExercises.FlashGlance
             _gap = Rect.rect.width/ _fieldWidth;
             var tempGap = Rect.rect.height / _fieldHeight;
             _gap = _gap > tempGap ? tempGap : _gap;
+            sliderRotationRadius = _gap / 2;
             _itemSize = _gap * 0.8f;
             System.Diagnostics.Debug.WriteLine("CreateInitialRound");
 
@@ -78,32 +81,37 @@ namespace WebExercises.FlashGlance
             //TestAnswer();
         }
 
-        
+
         private void InitSlider()
         {
-            for (int i = 0; i<= sliderQueueLength; ++i)
+            for (int i = 0; i <= sliderQueueLength; ++i)
             {
                 var sliderItem = InitSliderItem();
-                sliderItem.X = _gap * i;
+                sliderItem.X = sliderRotationRadius;
                 sliderItem.SetLabel(_roundData.QuestQueue[i].Cypher.ToString());
                 _sliderItems.Add(sliderItem);
+                sliderItem.SetRotation(sliderRotationAngle * (i - 2));
             }
             _hiddenSliderItem = InitSliderItem();
             _hiddenSliderItem.Hide();
-            _hiddenSliderItem.X = _gap * 3;
+            _hiddenSliderItem.X = sliderRotationRadius;
+            _hiddenSliderItem.Y = 0;
+            _hiddenSliderItem.SetRotation(sliderRotationAngle);            
             _sliderItems[0].SetSearched();
         }
 
         private Sequence UpdateSlider()
         {            
             var sliderItem = _hiddenSliderItem;
-            _hiddenSliderItem.X = _gap * 3;
+            sliderItem.X = sliderRotationRadius;
+            sliderItem.Y = 0;
+            sliderItem.SetRotation(sliderRotationAngle);
             _sliderItems.Add(sliderItem);
             sliderItem.SetLabel(_roundData.QuestQueue[_roundData.QuestIndex + 2].Cypher.ToString());
             var sequence = _sliderItems[1].SetSearched();
             foreach(var item in _sliderItems)
             {
-                sequence.Join(item.MoveBy(-_gap));
+                sequence.Join(item.RotateBy(-sliderRotationAngle));
             }
             _hiddenSliderItem = _sliderItems.Pop();
             sequence.Join(sliderItem.Appear());
@@ -142,7 +150,6 @@ namespace WebExercises.FlashGlance
                 newItem.Rotation = item.Rotation;
             return newItem;
         }
-
         
 
         // This is called every round after the initial one, update the elements here
