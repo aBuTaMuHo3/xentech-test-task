@@ -23,7 +23,6 @@ namespace WebExercises.FlashGlance
         [SerializeField] private Transform slider;
         [SerializeField] private int sliderQueueLength;
         [SerializeField] private float sliderRotationAngle;
-        [SerializeField] private float sliderRotationRadius;
 
         public Signal<IRoundItem> ItemSelected { get; } = new Signal<IRoundItem>();
         
@@ -57,6 +56,7 @@ namespace WebExercises.FlashGlance
         private int _fieldWidth;
         private float _gap;
         private float _itemSize;
+        private float _sliderRotationRadius;
         // Called on the very first round, for now here the initial elements can be initialized
         public void CreateInitialRound(IExerciseRoundDataVO dataVo)
         {
@@ -66,18 +66,20 @@ namespace WebExercises.FlashGlance
             _gap = Rect.rect.width/ _fieldWidth;
             var tempGap = Rect.rect.height / _fieldHeight;
             _gap = _gap > tempGap ? tempGap : _gap;
-            sliderRotationRadius = _gap / 2;
+            _sliderRotationRadius = _gap / 2;
             _itemSize = _gap * 0.8f;
             System.Diagnostics.Debug.WriteLine("CreateInitialRound");
-
+            var sequence = DOTween.Sequence();
             foreach (FlashGlanceRoundItemVO item in _roundData.Items)
             {
-                InitItem(item);
+                var newItem = InitItem(item);
+                if(newItem.IsHidden)
+                    sequence.Join(newItem.Appear());
             }
 
             InitSlider();
-            RoundCreated.Dispatch();
 
+            sequence.AppendCallback(() => RoundCreated.Dispatch());
             //TestAnswer();
         }
 
@@ -87,14 +89,14 @@ namespace WebExercises.FlashGlance
             for (int i = 0; i <= sliderQueueLength; ++i)
             {
                 var sliderItem = InitSliderItem();
-                sliderItem.X = sliderRotationRadius;
+                sliderItem.X = _sliderRotationRadius;
                 sliderItem.SetLabel(_roundData.QuestQueue[i].Cypher.ToString());
                 _sliderItems.Add(sliderItem);
                 sliderItem.SetRotation(sliderRotationAngle * (i - 2));
             }
             _hiddenSliderItem = InitSliderItem();
             _hiddenSliderItem.Hide();
-            _hiddenSliderItem.X = sliderRotationRadius;
+            _hiddenSliderItem.X = _sliderRotationRadius;
             _hiddenSliderItem.Y = 0;
             _hiddenSliderItem.SetRotation(sliderRotationAngle);            
             _sliderItems[0].SetSearched();
@@ -103,7 +105,7 @@ namespace WebExercises.FlashGlance
         private Sequence UpdateSlider()
         {            
             var sliderItem = _hiddenSliderItem;
-            sliderItem.X = sliderRotationRadius;
+            sliderItem.X = _sliderRotationRadius;
             sliderItem.Y = 0;
             sliderItem.SetRotation(sliderRotationAngle);
             _sliderItems.Add(sliderItem);
@@ -129,7 +131,6 @@ namespace WebExercises.FlashGlance
 
         private FlashGlanceItem InitItem(FlashGlanceRoundItemVO item)
         {
-            //var newItem = cachedItems.Count > 0 ? cachedItems.Pop() : Instantiate(itemPrefab, transform);
             FlashGlanceItem newItem;
             if (!_cachedField.TryGetValue(item.GridPosition, out newItem))
             {
@@ -137,11 +138,11 @@ namespace WebExercises.FlashGlance
                 newItem.X = (item.GridPosition.X - _fieldWidth/2f +0.5f) * _gap;
                 newItem.Y = (item.GridPosition.Y - _fieldHeight/2f +0.5f) * _gap;
                 newItem.Size = _itemSize;
+                newItem.Hide();
                 _cachedField.Add(item.GridPosition, newItem);
                 newItem.Button.onClick.AddListener(() => OnItemSelected(_cachedItems[item.GridPosition]));
             }
             _cachedItems[item.GridPosition] = item;
-            newItem.Show();
             newItem.gameObject.SetActive(true);
             newItem.SetLabel(item.Cypher.ToString());
             newItem.Scale = item.Scale;
@@ -159,12 +160,14 @@ namespace WebExercises.FlashGlance
             var sequence = DOTween.Sequence();
             _roundData = dataVo as FlashGlanceRoundDataVO;
             System.Diagnostics.Debug.WriteLine("CreateRound");
-
             foreach (FlashGlanceRoundItemVO item in _roundData.Items)
             {
                 var newItem = InitItem(item);
+                if (newItem.IsHidden)
+                    sequence.Join(newItem.Appear());
             }
-            if(lastRoundData.QuestIndex != _roundData.QuestIndex)
+
+            if (lastRoundData.QuestIndex != _roundData.QuestIndex)
                 sequence = UpdateSlider();
             sequence.AppendCallback(() => RoundCreated.Dispatch());
             
@@ -207,7 +210,6 @@ namespace WebExercises.FlashGlance
         // Replace _roundData.Solutions[0] with the actually selected item's data
         private void OnItemSelected(IRoundItem selected)
         {
-            //ItemSelected.Dispatch(_roundData.Solutions[0]);
             ItemSelected.Dispatch(selected);
         }
     }

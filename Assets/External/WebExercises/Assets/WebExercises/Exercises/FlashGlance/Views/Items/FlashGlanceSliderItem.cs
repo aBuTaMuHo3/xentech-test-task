@@ -94,6 +94,8 @@ namespace WebExercises.FlashGlance
             group.alpha = 0f;
         }
 
+        
+
         public Sequence SetSearched()
         {
             Sequence sequence = DOTween.Sequence();
@@ -107,7 +109,7 @@ namespace WebExercises.FlashGlance
         {
             Sequence sequence = DOTween.Sequence();
             sequence.Join(transform.DOScale(Vector3.one/2, duration));
-            sequence.Join(basic.DOFade(1f, duration));
+            sequence.Join(basic.DOFade(0.5f, duration));
             sequence.Join(selected.DOFade(0f, duration));
             return sequence;
         }

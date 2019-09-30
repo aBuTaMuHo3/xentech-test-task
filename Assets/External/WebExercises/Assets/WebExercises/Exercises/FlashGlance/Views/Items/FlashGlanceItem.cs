@@ -69,13 +69,18 @@ namespace WebExercises.FlashGlance
             set
             {
                 Vector3 rotation = new Vector3(0, 0, value);
-                transform.DORotate(rotation, 0);
+                transform.localRotation = Quaternion.Euler(rotation);
             }
         }
 
         public void Show()
         {
             group.alpha = 1;
+        }
+
+        public void Hide()
+        {
+            group.alpha = 0;
         }
 
         public Tweener Appear()
@@ -87,6 +92,11 @@ namespace WebExercises.FlashGlance
         public Tweener Disappear()
         {
             return group.DOFade(0f, duration);
+        }
+
+        public bool IsHidden
+        {
+            get {return group.alpha == 0; }
         }
 
         public float Scale
