@@ -76,21 +76,25 @@ namespace WebExercises.FlashGlance
         public void Show()
         {
             group.alpha = 1;
+            button.interactable = true;
         }
 
         public void Hide()
         {
             group.alpha = 0;
+            button.interactable = false;
         }
 
         public Tweener Appear()
         {
+            button.interactable = true;
             group.alpha = 0;
             return group.DOFade(1f, duration);
         }
 
         public Tweener Disappear()
         {
+            button.interactable = false;
             return group.DOFade(0f, duration);
         }
 

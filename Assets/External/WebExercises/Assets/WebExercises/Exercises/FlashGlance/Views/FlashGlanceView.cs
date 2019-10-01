@@ -1,10 +1,8 @@
 using System.Threading.Tasks;
 using ExerciseEngine.Model.ValueObjects.Interfaces;
 using FlashGlance.Model.ValueObjects;
-using DG.Tweening;
 using MinLibs.MVC;
 using MinLibs.Signals;
-using MinLibs.Utils;
 using UnityEngine;
 using System.Collections.Generic;
 using SynaptikonFramework.Util.Math;
@@ -19,10 +17,7 @@ namespace WebExercises.FlashGlance
     public class FlashGlanceView: MediatedBehaviour, IFlashGlanceView
     {
         [SerializeField] private FlashGlanceItem itemPrefab;
-        [SerializeField] private FlashGlanceSliderItem sliderItemPrefab;
-        [SerializeField] private Transform slider;
-        [SerializeField] private int sliderQueueLength;
-        [SerializeField] private float sliderRotationAngle;
+        [SerializeField] private FlashGlanceSlider slider;
 
         public Signal<IRoundItem> ItemSelected { get; } = new Signal<IRoundItem>();
         
@@ -50,13 +45,10 @@ namespace WebExercises.FlashGlance
         private FlashGlanceRoundDataVO _roundData;
         private readonly IDictionary<SafeHashCodePoint, FlashGlanceItem> _cachedField = new Dictionary<SafeHashCodePoint, FlashGlanceItem>();
         private readonly IDictionary<SafeHashCodePoint, FlashGlanceRoundItemVO> _cachedItems = new Dictionary<SafeHashCodePoint, FlashGlanceRoundItemVO>();
-        private IList<FlashGlanceSliderItem> _sliderItems = new List<FlashGlanceSliderItem>();
-        private FlashGlanceSliderItem _hiddenSliderItem;
         private int _fieldHeight;
         private int _fieldWidth;
         private float _gap;
         private float _itemSize;
-        private float _sliderRotationRadius;
         // Called on the very first round, for now here the initial elements can be initialized
         public void CreateInitialRound(IExerciseRoundDataVO dataVo)
         {
@@ -66,67 +58,19 @@ namespace WebExercises.FlashGlance
             _gap = Rect.rect.width/ _fieldWidth;
             var tempGap = Rect.rect.height / _fieldHeight;
             _gap = _gap > tempGap ? tempGap : _gap;
-            _sliderRotationRadius = _gap / 2;
             _itemSize = _gap * 0.8f;
             System.Diagnostics.Debug.WriteLine("CreateInitialRound");
-            var sequence = DOTween.Sequence();
             foreach (FlashGlanceRoundItemVO item in _roundData.Items)
             {
                 var newItem = InitItem(item);
                 if(newItem.IsHidden)
-                    sequence.Join(newItem.Appear());
+                    newItem.Appear();
             }
 
-            InitSlider();
+            slider.Init(_roundData);
 
-            sequence.AppendCallback(() => RoundCreated.Dispatch());
+            RoundCreated.Dispatch();
             //TestAnswer();
-        }
-
-
-        private void InitSlider()
-        {
-            for (int i = 0; i <= sliderQueueLength; ++i)
-            {
-                var sliderItem = InitSliderItem();
-                sliderItem.X = _sliderRotationRadius;
-                sliderItem.SetLabel(_roundData.QuestQueue[i].Cypher.ToString());
-                _sliderItems.Add(sliderItem);
-                sliderItem.SetRotation(sliderRotationAngle * (i - 2));
-            }
-            _hiddenSliderItem = InitSliderItem();
-            _hiddenSliderItem.Hide();
-            _hiddenSliderItem.X = _sliderRotationRadius;
-            _hiddenSliderItem.Y = 0;
-            _hiddenSliderItem.SetRotation(sliderRotationAngle);            
-            _sliderItems[0].SetSearched();
-        }
-
-        private Sequence UpdateSlider()
-        {            
-            var sliderItem = _hiddenSliderItem;
-            sliderItem.X = _sliderRotationRadius;
-            sliderItem.Y = 0;
-            sliderItem.SetRotation(sliderRotationAngle);
-            _sliderItems.Add(sliderItem);
-            sliderItem.SetLabel(_roundData.QuestQueue[_roundData.QuestIndex + 2].Cypher.ToString());
-            var sequence = _sliderItems[1].SetSearched();
-            foreach(var item in _sliderItems)
-            {
-                sequence.Join(item.RotateBy(-sliderRotationAngle));
-            }
-            _hiddenSliderItem = _sliderItems.Pop();
-            sequence.Join(sliderItem.Appear());
-            sequence.Join(_hiddenSliderItem.Disappear());
-            sequence.Join(_hiddenSliderItem.SetUpcoming());
-            return sequence;
-        }
-
-        private FlashGlanceSliderItem InitSliderItem()
-        {
-            var newItem = Instantiate(sliderItemPrefab, slider);
-            newItem.SetUpcoming();
-            return newItem;
         }
 
         private FlashGlanceItem InitItem(FlashGlanceRoundItemVO item)
@@ -157,20 +101,19 @@ namespace WebExercises.FlashGlance
         public void CreateRound(IExerciseRoundDataVO dataVo)
         {
             FlashGlanceRoundDataVO lastRoundData = _roundData;
-            var sequence = DOTween.Sequence();
             _roundData = dataVo as FlashGlanceRoundDataVO;
+            
             System.Diagnostics.Debug.WriteLine("CreateRound");
             foreach (FlashGlanceRoundItemVO item in _roundData.Items)
             {
                 var newItem = InitItem(item);
                 if (newItem.IsHidden)
-                    sequence.Join(newItem.Appear());
+                    newItem.Appear();
             }
 
-            if (lastRoundData.QuestIndex != _roundData.QuestIndex)
-                sequence = UpdateSlider();
-            sequence.AppendCallback(() => RoundCreated.Dispatch());
-            
+            slider.Update(_roundData);
+
+            RoundCreated.Dispatch();
             //TestAnswer();
         }
 
@@ -191,18 +134,18 @@ namespace WebExercises.FlashGlance
        // and dispatch both necessary signals. Preferably dispatch them when animations are finished  
         public void ShowCorrect(IRoundEvaluationResultVO dataVo)
         {
-            System.Diagnostics.Debug.WriteLine("ShowCorrect");
-            
-            var seq = DOTween.Sequence();
-            seq.Join(_cachedField[((FlashGlanceRoundItemVO)_roundData.Solutions[0]).GridPosition].Disappear());
-            seq.AppendCallback(() => ItemHidden.Dispatch(dataVo.Solutions[0]));
-            seq.AppendCallback(() => FeedbackShown.Dispatch());            
+            System.Diagnostics.Debug.WriteLine("ShowCorrect");            
+            _cachedField[((FlashGlanceRoundItemVO)_roundData.Solutions[0]).GridPosition].Disappear();
+            ItemHidden.Dispatch(dataVo.Solutions[0]);
+            FeedbackShown.Dispatch();
         }
 
         // Usually here some indication is shown that the answer was wrong, for now we do nothing but finish the round
         public void ShowWrong(IRoundEvaluationResultVO dataVo)
         {
             System.Diagnostics.Debug.WriteLine("ShowWrong");
+            _cachedField[((FlashGlanceRoundItemVO)_roundData.Solutions[0]).GridPosition].Disappear();
+            ItemHidden.Dispatch(dataVo.Solutions[0]);
             FeedbackShown.Dispatch();
         }
 

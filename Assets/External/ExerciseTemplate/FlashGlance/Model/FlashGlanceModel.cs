@@ -150,7 +150,7 @@ namespace FlashGlance.Model
         protected override bool IsAnswerCorrect(IAnswerVO answer, bool isStepped = false, int stepNr = -1)
         {
             bool isCorrect = base.IsAnswerCorrect(answer, false, stepNr);
-            if(answer == null)
+            if(answer == null || !isCorrect)
             {
                 _allItems.Remove(_solutionChain[_currentSolutionIndex]);
                 _currentSolutionIndex++;

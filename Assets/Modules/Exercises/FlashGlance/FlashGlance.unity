@@ -162,12 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 5243784899312912201, guid: fbb9eacc2ad1dfd409ae451f20868b08,
     type: 3}
-  sliderItemPrefab: {fileID: 4963371149318003464, guid: a7ec5f50b89f78340bb88320aed1cc1c,
-    type: 3}
-  slider: {fileID: 1155297894}
-  sliderQueueLength: 2
-  sliderRotationAngle: 45
-  radius: 0
+  slider: {fileID: 1155297897}
 --- !u!1 &462309184
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +352,7 @@ GameObject:
   - component: {fileID: 1155297894}
   - component: {fileID: 1155297896}
   - component: {fileID: 1155297895}
+  - component: {fileID: 1155297897}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -420,6 +416,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155297893}
   m_CullTransparentMesh: 0
+--- !u!114 &1155297897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155297893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78adfef1f402b9459047437d726c9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderItemPrefab: {fileID: 4963371149318003464, guid: a7ec5f50b89f78340bb88320aed1cc1c,
+    type: 3}
+  sliderQueueLength: 2
+  sliderRotationAngle: 45
 --- !u!1 &1817519695
 GameObject:
   m_ObjectHideFlags: 0
